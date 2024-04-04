@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controlPanelViewModels="clr-namespace:GYMGO.Desktop.ViewModels.ControlPanel"
+                    xmlns:controlPanelView="clr-namespace:GYMGO.Desktop.Views.ControlPanel"
+                    xmlns:usersViewModels="clr-namespace:GYMGO.Desktop.ViewModels.Users"
+                    xmlns:usersView="clr-namespace:GYMGO.Desktop.Views.Users" 
+                    xmlns:gympassViewModels="clr-namespace:GYMGO.Desktop.ViewModels.Gympass"
+                    xmlns:gympassView="clr-namespace:GYMGO.Desktop.Views.Gympass"
+                    xmlns:supplementsViewModels="clr-namespace:GYMGO.Desktop.ViewModels.Supplements"
+                    xmlns:supplemnetsView="clr-namespace:GYMGO.Desktop.Views.Supplements">
+                    
+    <DataTemplate DataType="{x:Type controlPanelViewModels:ControlPanelViewModel}">
+        <controlPanelView:ControlPanelView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type usersViewModels:UsersViewModel}">
+        <usersView:UsersView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type usersViewModels:VisitorsViewModel}">
+        <usersView:VisitorsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type usersViewModels:TrainersViewModel}">
+        <usersView:Trainers/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type usersViewModels:OwnersViewModel}">
+        <usersView:Owners/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type gympassViewModels:GympassViewModel}">
+        <gympassView:GympassView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type gympassViewModels:PassesViewModel}">
+        <gympassView:Passes/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type gympassViewModels:TicketsViewModel}">
+        <gympassView:Tickets/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type supplementsViewModels:SupplementsViewModel}">
+        <supplemnetsView:SupplementsView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type supplementsViewModels:NutrionalViewModel}">
+        <supplemnetsView:NutrionalView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type supplementsViewModels:EquipmentViewModel}">
+        <supplemnetsView:EquipmentView/>
+    </DataTemplate>
+</ResourceDictionary>
