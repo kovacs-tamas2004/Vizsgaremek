@@ -12,7 +12,7 @@ namespace GYMGO.Desktop.Extensions
             services.AddScoped<IVisitorService, VisitorService>();
             services.AddScoped<IOwnerService, OwnerService>();
         }
-
+        
         public static void ConfigureAssamblers(this IServiceCollection services)
         {
             services.AddScoped<TrainerAssambler>();

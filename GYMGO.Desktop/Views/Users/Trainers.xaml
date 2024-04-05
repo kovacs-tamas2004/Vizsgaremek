@@ -67,7 +67,7 @@
         <TextBox Grid.Row="1" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.LastName}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.FirstName}"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.Email}"></TextBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedTrainer.BirthsDay}"></DatePicker>
+        <DatePicker Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedTrainer.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
         <StackPanel Grid.Row="5" Grid.Column="1">
             <CheckBox Content="fiatal (12-21 év)" IsChecked="{Binding SelectedTrainer.Fiatal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
             <CheckBox Content="közép (22-60 év)" IsChecked="{Binding SelectedTrainer.Kozep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
@@ -89,7 +89,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="80" Header="Vezetéknév" Binding="{Binding LastName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="80" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
-                <DataGridTextColumn Width="150" Header="Születési dátum" Binding="{Binding BirthsDay}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
                 <DataGridCheckBoxColumn Width="70" Header="Fiatal" Binding="{Binding Fiatal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
                 <DataGridCheckBoxColumn Width="70" Header="Közép" Binding="{Binding Kozep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
