@@ -1,7 +1,4 @@
-﻿using GYMGO.Desktop.Models;
-using System;
-
-namespace GYMGO.Desktop.Models
+﻿namespace GYMGO.Desktop.Models
 {
     public class User
     {

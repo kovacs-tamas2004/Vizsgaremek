@@ -35,14 +35,16 @@ namespace GYMGO.Desktop.ViewModels.Users
 
 
         [RelayCommand]
-        public void ShowVisitorsView()
+        public async Task ShowVisitorsView()
         {
+            await _visitorsViewModel.InitializeAsync();
             CurrentVisitorsChildView = _visitorsViewModel;
         }
 
         [RelayCommand]
-        public void ShowOwnersView()
+        public async Task ShowOwnersView()
         {
+            await _ownersViewModel.InitializeAsync();
             CurrentVisitorsChildView = _ownersViewModel;
         }
 

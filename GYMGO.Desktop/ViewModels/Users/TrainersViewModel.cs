@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using GYMGO.Desktop.ViewModels.Base;
 using GYMGO.HttpService.Service;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using GYMGO.Shared.Models;
-using GYMGO.Shared.Extensions;
 using GYMGO.Shared.Responses;
 using GYMGO.desktop.ViewModels.Base;
 

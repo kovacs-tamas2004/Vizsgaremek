@@ -12,8 +12,8 @@ namespace GYMGO.Backend.Context
                 new Trainer
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Faragó",
-                    LastName="Zsolt",
+                    FirstName="Zsolt",
+                    LastName="Faragó",
                     BirthsDay=new DateTime(1989,07,10),
                     Email="farago.zsolt@gmail.com",
                     AgeGroupId=Guid.NewGuid(),
@@ -22,8 +22,8 @@ namespace GYMGO.Backend.Context
                 new Trainer
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Nagy",
-                    LastName="Anita",
+                    FirstName="Anita",
+                    LastName="Nagy",
                     BirthsDay=new DateTime(1992,02,23),
                     Email="nagyanita0223@gmail.com",
                     AgeGroupId=Guid.NewGuid(),
@@ -32,8 +32,8 @@ namespace GYMGO.Backend.Context
                 new Trainer
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Lakatos",
-                    LastName="Béla",
+                    FirstName="Béla",
+                    LastName="Lakatos",
                     BirthsDay=new DateTime(2000,11,15),
                     Email="lakbela@gmail.com",
                     AgeGroupId=Guid.NewGuid(),
@@ -42,8 +42,8 @@ namespace GYMGO.Backend.Context
                 new Trainer
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Kiss",
-                    LastName="László",
+                    FirstName="László",
+                    LastName="Kiss",
                     BirthsDay=new DateTime(1988,12,01),
                     Email="farago1998@gmail.com",
                     AgeGroupId=Guid.NewGuid(),
@@ -52,8 +52,8 @@ namespace GYMGO.Backend.Context
                 new Trainer
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Szekeres",
-                    LastName="Brigitta",
+                    FirstName="Brigitta",
+                    LastName="Szekeres",
                     BirthsDay=new DateTime(2002,04,30),
                     Email="brigitta.szekeres@gmail.com",
                     AgeGroupId=Guid.NewGuid(),
@@ -68,8 +68,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Ábrahám",
-                    LastName="Bence",
+                    FirstName="Bence",
+                    LastName="Ábrahám",
                     BirthsDay=new DateTime(1994,03,24),
                     Email="abraham1994@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -77,8 +77,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Lakatos",
-                    LastName="Kevin",
+                    FirstName="Kevin",
+                    LastName="Lakatos",
                     BirthsDay=new DateTime(2000,11,30),
                     Email="lakkev1130@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -86,8 +86,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Kiss",
-                    LastName="Eszter",
+                    FirstName="Eszter",
+                    LastName="Kiss",
                     BirthsDay=new DateTime(1996,09,03),
                     Email="eszterkiss@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -95,8 +95,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Kovács",
-                    LastName="Gréta",
+                    FirstName="Gréta",
+                    LastName="Kovács",
                     BirthsDay=new DateTime(1982,07,28),
                     Email="kovacs.greta0728@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -104,8 +104,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Nagy",
-                    LastName="Ákos",
+                    FirstName="Ákos",
+                    LastName="Nagy",
                     BirthsDay=new DateTime(2000,01,11),
                     Email="nagyakos0111@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -113,8 +113,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Hortobágyi",
-                    LastName="Kamilla",
+                    FirstName="Kamilla",
+                    LastName="Hortobágyi",
                     BirthsDay=new DateTime(1999,02,24),
                     Email="horkamilla0224@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -122,8 +122,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Hajnal",
-                    LastName="Ferenc",
+                    FirstName="Ferenc",
+                    LastName="Hajnal",
                     BirthsDay=new DateTime(2003,10,08),
                     Email="ferenc.hajnal@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -131,8 +131,8 @@ namespace GYMGO.Backend.Context
                 new Visitor
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Papp",
-                    LastName="Enikő",
+                    FirstName="Enikő",
+                    LastName="Papp",
                     BirthsDay=new DateTime(1997,09,16),
                     Email="pappeniko0916@gmail.com",
                     WorkingFormId=Guid.NewGuid(),
@@ -146,8 +146,8 @@ namespace GYMGO.Backend.Context
                 new Owner
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Sánta",
-                    LastName="Virág",
+                    FirstName="Virág",
+                    LastName="Sánta",
                     BirthsDay=new DateTime(1987,11,26),
                     Email="santa.virag1126@gmail.com",
                     Tulajdon="Global Fitness",
@@ -156,8 +156,8 @@ namespace GYMGO.Backend.Context
                 new Owner
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Szabó",
-                    LastName="Endre",
+                    FirstName="Endre",
+                    LastName="Szabó",
                     BirthsDay=new DateTime(1978,05,21),
                     Email="endre.szabo@gmail.com",
                     Tulajdon="Gym Class",
@@ -166,8 +166,8 @@ namespace GYMGO.Backend.Context
                 new Owner
                 {
                     Id=Guid.NewGuid(),
-                    FirstName="Barta",
-                    LastName="Patrik",
+                    FirstName="Patrik",
+                    LastName="Barta",
                     BirthsDay=new DateTime(1983,03,24),
                     Email="patrikbarta@gmail.com",
                     Tulajdon="Chili Fitness",

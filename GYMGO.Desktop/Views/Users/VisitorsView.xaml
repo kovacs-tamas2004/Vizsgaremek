@@ -83,7 +83,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="80" Header="Vezetéknév" Binding="{Binding LastName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="80" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
-                <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay}"></DataGridTextColumn>
+                <DataGridTextColumn Width="150" Header="Születési dátum" Binding="{Binding BirthsDay}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Edzésfajta" Binding="{Binding WorkingLevels}"></DataGridTextColumn>
             </DataGrid.Columns>
