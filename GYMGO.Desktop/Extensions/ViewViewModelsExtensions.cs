@@ -1,16 +1,12 @@
 ﻿using GYMGO.Desktop.ViewModels;
 using GYMGO.Desktop.ViewModels.ControlPanel;
-using GYMGO.Desktop.ViewModels.Gympass;
 using GYMGO.Desktop.ViewModels.Login;
 using GYMGO.Desktop.ViewModels.Users;
-using GYMGO.Desktop.ViewModels.Supplements;
 using GYMGO.Desktop.Views;
 using GYMGO.Desktop.Views.ControlPanel;
 using GYMGO.Desktop.Views.Login;
 using GYMGO.Desktop.Views.Users;
-using GYMGO.Desktop.Views.Supplements;
 using Microsoft.Extensions.DependencyInjection;
-using GYMGO.Desktop.Views.Gympass;
 
 namespace GYMGO.Desktop.Extensions
 {
@@ -63,42 +59,6 @@ namespace GYMGO.Desktop.Extensions
             services.AddSingleton<Owners>(s => new Owners()
             {
                 DataContext = s.GetRequiredService<OwnersViewModel>()
-            });
-
-            services.AddSingleton<GympassViewModel>();
-            services.AddSingleton<GympassView>(s => new GympassView()
-            {
-                DataContext = s.GetRequiredService<GympassViewModel>()
-            });
-
-            services.AddSingleton<PassesViewModel>();
-            services.AddSingleton<Passes>(s => new Passes()
-            {
-                DataContext = s.GetRequiredService<PassesViewModel>()
-            });
-
-            services.AddSingleton<TicketsViewModel>();
-            services.AddSingleton<Tickets>(s => new Tickets()
-            {
-                DataContext = s.GetRequiredService<TicketsViewModel>()
-            });
-
-            services.AddSingleton<SupplementsViewModel>();
-            services.AddSingleton<SupplementsView>(s => new SupplementsView()
-            {
-                DataContext = s.GetRequiredService<SupplementsViewModel>()
-            });
-
-            services.AddSingleton<NutrionalViewModel>();
-            services.AddSingleton<NutrionalView>(s => new NutrionalView()
-            {
-                DataContext = s.GetRequiredService<NutrionalViewModel>()
-            });
-
-            services.AddSingleton<EquipmentViewModel>();
-            services.AddSingleton<EquipmentView>(s => new EquipmentView()
-            {
-                DataContext = s.GetRequiredService<EquipmentViewModel>()
             });
         }
     }
