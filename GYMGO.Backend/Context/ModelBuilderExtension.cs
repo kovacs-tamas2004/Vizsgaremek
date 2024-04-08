@@ -16,6 +16,7 @@ namespace GYMGO.Backend.Context
                     LastName="Faragó",
                     BirthsDay=new DateTime(1989,07,10),
                     Email="farago.zsolt@gmail.com",
+                    Address="Budapest, Kossuth Lajos utca 12.",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -26,6 +27,7 @@ namespace GYMGO.Backend.Context
                     LastName="Nagy",
                     BirthsDay=new DateTime(1992,02,23),
                     Email="nagyanita0223@gmail.com",
+                    Address="Szeged, Petőfi Sándor utca 6.",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -36,6 +38,7 @@ namespace GYMGO.Backend.Context
                     LastName="Lakatos",
                     BirthsDay=new DateTime(2000,11,15),
                     Email="lakbela@gmail.com",
+                    Address="Debrecen, Bem tér 3.",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -46,6 +49,7 @@ namespace GYMGO.Backend.Context
                     LastName="Kiss",
                     BirthsDay=new DateTime(1988,12,01),
                     Email="farago1998@gmail.com",
+                    Address="Pécs, Jókai utca 24.",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -56,6 +60,7 @@ namespace GYMGO.Backend.Context
                     LastName="Szekeres",
                     BirthsDay=new DateTime(2002,04,30),
                     Email="brigitta.szekeres@gmail.com",
+                    Address="Győr, Arany János utca 18.",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 }
@@ -72,6 +77,7 @@ namespace GYMGO.Backend.Context
                     LastName="Ábrahám",
                     BirthsDay=new DateTime(1994,03,24),
                     Email="abraham1994@gmail.com",
+                    Address="Miskolc, Bartók Béla út 30.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -81,6 +87,7 @@ namespace GYMGO.Backend.Context
                     LastName="Lakatos",
                     BirthsDay=new DateTime(2000,11,30),
                     Email="lakkev1130@gmail.com",
+                    Address="Kecskemét, Ady Endre utca 7.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -90,6 +97,7 @@ namespace GYMGO.Backend.Context
                     LastName="Kiss",
                     BirthsDay=new DateTime(1996,09,03),
                     Email="eszterkiss@gmail.com",
+                    Address="Szombathely, Kossuth tér 15.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -99,6 +107,7 @@ namespace GYMGO.Backend.Context
                     LastName="Kovács",
                     BirthsDay=new DateTime(1982,07,28),
                     Email="kovacs.greta0728@gmail.com",
+                    Address="Nyíregyháza, Széchenyi utca 52.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -108,6 +117,7 @@ namespace GYMGO.Backend.Context
                     LastName="Nagy",
                     BirthsDay=new DateTime(2000,01,11),
                     Email="nagyakos0111@gmail.com",
+                    Address="Veszprém, Pázmány Péter utca 9.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -117,6 +127,7 @@ namespace GYMGO.Backend.Context
                     LastName="Hortobágyi",
                     BirthsDay=new DateTime(1999,02,24),
                     Email="horkamilla0224@gmail.com",
+                    Address="Székesfehérvár, Táncsics Mihály utca 36.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -126,6 +137,7 @@ namespace GYMGO.Backend.Context
                     LastName="Hajnal",
                     BirthsDay=new DateTime(2003,10,08),
                     Email="ferenc.hajnal@gmail.com",
+                    Address="Eger, Deák Ferenc tér 21.",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -135,6 +147,7 @@ namespace GYMGO.Backend.Context
                     LastName="Papp",
                     BirthsDay=new DateTime(1997,09,16),
                     Email="pappeniko0916@gmail.com",
+                    Address="Zalaegerszeg, Szent István tér 4.",
                     WorkingFormId=Guid.NewGuid(),
                 }
             };
@@ -150,8 +163,9 @@ namespace GYMGO.Backend.Context
                     LastName="Sánta",
                     BirthsDay=new DateTime(1987,11,26),
                     Email="santa.virag1126@gmail.com",
-                    Tulajdon="Global Fitness",
-                    Telepules="Szeged",
+                    Address="Sopron, Liszt Ferenc utca 63.",
+                    Ownership="Global Fitness",
+                    Settlement="Szeged",
                 },
                 new Owner
                 {
@@ -160,8 +174,9 @@ namespace GYMGO.Backend.Context
                     LastName="Szabó",
                     BirthsDay=new DateTime(1978,05,21),
                     Email="endre.szabo@gmail.com",
-                    Tulajdon="Gym Class",
-                    Telepules="Szeged",
+                    Address="Nagykanizsa, Batthyány utca 11.",
+                    Ownership="Gym Class",
+                    Settlement="Szeged",
                 },
                 new Owner
                 {
@@ -170,8 +185,9 @@ namespace GYMGO.Backend.Context
                     LastName="Barta",
                     BirthsDay=new DateTime(1983,03,24),
                     Email="patrikbarta@gmail.com",
-                    Tulajdon="Chili Fitness",
-                    Telepules="Budapest",
+                    Address="Hódmezővásárhely, Kossuth utca 44.",
+                    Ownership="Chili Fitness",
+                    Settlement="Budapest",
                 }
             };
             // Owners

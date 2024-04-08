@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GYMGO.Shared.Models;
+﻿using GYMGO.Shared.Models;
 using GYMGO.Shared.Dtos;
 
 namespace GYMGO.Shared.Extensions
@@ -19,9 +14,10 @@ namespace GYMGO.Shared.Extensions
                 LastName = trainer.LastName,
                 BirthsDay = trainer.BirthsDay,
                 Email = trainer.Email,
-                Fiatal = trainer.Fiatal,
-                Kozep = trainer.Kozep,
-                Idos = trainer.Idos,
+                Address = trainer.Address,
+                Young = trainer.Young,
+                Middle = trainer.Middle,
+                Old = trainer.Old,
                 WorkingLevels = trainer.WorkingLevels,
                 AgeGroupId = trainer.AgeGroupId,
                 WorkingTypeId = trainer.WorkingTypeId
@@ -37,9 +33,10 @@ namespace GYMGO.Shared.Extensions
                 LastName= trainerdto.LastName,
                 BirthsDay= trainerdto.BirthsDay,
                 Email = trainerdto.Email,
-                Fiatal = trainerdto.Fiatal,
-                Kozep = trainerdto.Kozep,
-                Idos = trainerdto.Idos,
+                Address = trainerdto.Address,
+                Young = trainerdto.Young,
+                Middle = trainerdto.Middle,
+                Old = trainerdto.Old,
                 WorkingLevels= trainerdto.WorkingLevels,
                 AgeGroupId = trainerdto.AgeGroupId,
                 WorkingTypeId = trainerdto.WorkingTypeId

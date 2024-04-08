@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GYMGO.Shared.Models;
+﻿using GYMGO.Shared.Models;
 using GYMGO.Shared.Dtos;
 
 namespace GYMGO.Shared.Extensions
@@ -19,6 +14,7 @@ namespace GYMGO.Shared.Extensions
                 LastName = visitor.LastName,
                 BirthsDay = visitor.BirthsDay,
                 Email = visitor.Email,
+                Address = visitor.Address,
                 WorkingForm = visitor.WorkingForm,
                 WorkingFormId = visitor.WorkingFormId,
             };
@@ -33,6 +29,7 @@ namespace GYMGO.Shared.Extensions
                 LastName = visitordto.LastName,
                 BirthsDay = visitordto.BirthsDay,
                 Email = visitordto.Email,
+                Address = visitordto.Address,
                 WorkingForm = visitordto.WorkingForm,
                 WorkingFormId = visitordto.WorkingFormId,
             };

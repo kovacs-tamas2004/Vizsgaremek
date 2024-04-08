@@ -13,7 +13,7 @@
         <Style TargetType="UserControl">
             <Setter Property="Background" Value="White" />
             <Setter Property="Height" Value="700" />
-            <Setter Property="Width" Value="900" />
+            <Setter Property="Width" Value="1000" />
         </Style>
     </d:DesignerProperties.DesignStyle>
     <Grid Margin="5 5 5 5">
@@ -22,6 +22,7 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -47,10 +48,11 @@
         <Label Grid.Row="1" Grid.Column="0">Vezetéknév:</Label>
         <Label Grid.Row="2" Grid.Column="0">Keresztnév:</Label>
         <Label Grid.Row="3" Grid.Column="0">E-mail cím:</Label>
-        <Label Grid.Row="4" Grid.Column="0">Születési év:</Label>
-        <Label Grid.Row="5" Grid.Column="0">Amilyen korosztályt vállal:</Label>
-        <Label Grid.Row="6" Grid.Column="0">Amilyen edzépstípust vállal:</Label>
-        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
+        <Label Grid.Row="4" Grid.Column="0">Lakcím:</Label>
+        <Label Grid.Row="5" Grid.Column="0">Születési év:</Label>
+        <Label Grid.Row="6" Grid.Column="0">Amilyen korosztályt vállal:</Label>
+        <Label Grid.Row="7" Grid.Column="0">Amilyen edzépstípust vállal:</Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
             <Button  Margin="2 2 2 2" HorizontalAlignment="Right" MinWidth="80" Content="Új adat"
                 Command="{Binding DoNewTrainerCommand}" Height="25"
                 />
@@ -67,20 +69,21 @@
         <TextBox Grid.Row="1" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.LastName}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.FirstName}"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.Email}"></TextBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedTrainer.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
-        <StackPanel Grid.Row="5" Grid.Column="1">
-            <CheckBox Content="fiatal (12-21 év)" IsChecked="{Binding SelectedTrainer.Fiatal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
-            <CheckBox Content="közép (22-60 év)" IsChecked="{Binding SelectedTrainer.Kozep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
-            <CheckBox Content="idős (61- év)" IsChecked="{Binding SelectedTrainer.Idos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedTrainer.Address}"></TextBox>
+        <DatePicker Grid.Row="5" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedTrainer.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
+        <StackPanel Grid.Row="6" Grid.Column="1">
+            <CheckBox Content="fiatal (12-21 év)" IsChecked="{Binding SelectedTrainer.Young, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
+            <CheckBox Content="közép (22-60 év)" IsChecked="{Binding SelectedTrainer.Middle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
+            <CheckBox Content="idős (61- év)" IsChecked="{Binding SelectedTrainer.Old, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2 4 2 2"></CheckBox>
         </StackPanel>
-        <ComboBox Grid.Row="6" Grid.Column="1" Margin="2 2 2 2"
+        <ComboBox Grid.Row="7" Grid.Column="1" Margin="2 2 2 2"
             ItemsSource="{Binding WorkingLevels}"
             SelectedItem="{Binding SelectedWorkingLevels}"
             SelectedIndex="0">
         </ComboBox>
         <DataGrid 
             AutoGenerateColumns="False"
-            Grid.Row="8"
+            Grid.Row="9"
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Trainers}"
             SelectedItem="{Binding SelectedTrainer}" Margin="0,0,0,0"
@@ -91,9 +94,10 @@
                 <DataGridTextColumn Width="80" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
-                <DataGridCheckBoxColumn Width="70" Header="Fiatal" Binding="{Binding Fiatal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
-                <DataGridCheckBoxColumn Width="70" Header="Közép" Binding="{Binding Kozep, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
-                <DataGridCheckBoxColumn Width="70" Header="Idős" Binding="{Binding Idos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                <DataGridTextColumn Width="220" Header="Lakcím" Binding="{Binding Address}"></DataGridTextColumn>
+                <DataGridCheckBoxColumn Width="70" Header="Fiatal" Binding="{Binding Young, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Width="70" Header="Közép" Binding="{Binding Middle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Width="70" Header="Idős" Binding="{Binding Old, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
                 <DataGridTextColumn Width="100" Header="Edzéstípus" Binding="{Binding WorkingLevels}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>

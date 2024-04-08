@@ -29,6 +29,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Expander Grid.Row="0" Grid.ColumnSpan="2" Header="Szűrés és keresés" Margin="2 4 2 10" Padding="0 0 0 4">
@@ -46,10 +47,11 @@
         <Label Grid.Row="1" Grid.Column="0">Vezetéknév:</Label>
         <Label Grid.Row="2" Grid.Column="0">Keresztnév:</Label>
         <Label Grid.Row="3" Grid.Column="0">E-mail cím:</Label>
-        <Label Grid.Row="4" Grid.Column="0">Születési év:</Label>
-        <Label Grid.Row="5" Grid.Column="0">Amilyen edzéstípust szeretne csinálni:</Label>
+        <Label Grid.Row="4" Grid.Column="0">Lakcím:</Label>
+        <Label Grid.Row="5" Grid.Column="0">Születési év:</Label>
+        <Label Grid.Row="6" Grid.Column="0">Amilyen edzéstípust szeretne csinálni:</Label>
         
-        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
             <Button  Margin="2 2 2 2" HorizontalAlignment="Right" MinWidth="80" Content="Új adat"
         Command="{Binding DoNewVisitorCommand}" Height="25"
         />
@@ -66,8 +68,9 @@
         <TextBox Grid.Row="1" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedVisitor.LastName}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedVisitor.FirstName}"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedVisitor.Email}"></TextBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedVisitor.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
-        <ComboBox Grid.Row="5" Grid.Column="1" Margin="2 2 2 2"
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedVisitor.Address}"></TextBox>
+        <DatePicker Grid.Row="5" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedVisitor.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
+        <ComboBox Grid.Row="6" Grid.Column="1" Margin="2 2 2 2"
             ItemsSource="{Binding WorkingForms}"
             SelectedItem="{Binding SelectedWorkingForm}"
             SelectedIndex="0">
@@ -75,7 +78,7 @@
 
         <DataGrid 
             AutoGenerateColumns="False"
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Visitors}"
             SelectedItem="{Binding SelectedVisitor}" Margin="0,0,0,0"
@@ -85,6 +88,7 @@
                 <DataGridTextColumn Width="80" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn Width="220" Header="Lakcím" Binding="{Binding Address}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Edzésfajta" Binding="{Binding WorkingLevels}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>

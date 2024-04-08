@@ -13,7 +13,7 @@
         <Style TargetType="UserControl">
             <Setter Property="Background" Value="White" />
             <Setter Property="Height" Value="700" />
-            <Setter Property="Width" Value="900" />
+            <Setter Property="Width" Value="1000" />
         </Style>
     </d:DesignerProperties.DesignStyle>
     <Grid Margin="5 5 5 5">
@@ -22,6 +22,7 @@
             <ColumnDefinition Width="300"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -47,11 +48,12 @@
         <Label Grid.Row="1" Grid.Column="0">Vezetéknév:</Label>
         <Label Grid.Row="2" Grid.Column="0">Keresztnév:</Label>
         <Label Grid.Row="3" Grid.Column="0">E-mail cím:</Label>
-        <Label Grid.Row="4" Grid.Column="0">Születési év:</Label>
-        <Label Grid.Row="5" Grid.Column="0">Tulajdonában lévő edzőterem neve:</Label>
-        <Label Grid.Row="6" Grid.Column="0">Település, ahol az edzőterem található:</Label>
+        <Label Grid.Row="4" Grid.Column="0">Lakcím:</Label>
+        <Label Grid.Row="5" Grid.Column="0">Születési év:</Label>
+        <Label Grid.Row="6" Grid.Column="0">Tulajdonában lévő edzőterem neve:</Label>
+        <Label Grid.Row="7" Grid.Column="0">Település, ahol az edzőterem található:</Label>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
+        <StackPanel Orientation="Horizontal" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,20,10,5" VerticalAlignment="Bottom">
             <Button  Margin="2 2 2 2" HorizontalAlignment="Right" MinWidth="80" Content="Új adat"
         Command="{Binding DoNewOwnerCommand}" Height="25"
         />
@@ -68,13 +70,14 @@
         <TextBox Grid.Row="1" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.LastName}"></TextBox>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.FirstName}"></TextBox>
         <TextBox Grid.Row="3" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Email}"></TextBox>
-        <DatePicker Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedOwner.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
-        <TextBox Grid.Row="5" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Tulajdon}"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Telepules}"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Address}"></TextBox>
+        <DatePicker Grid.Row="5" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedOwner.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Ownership}"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedOwner.Settlement}"></TextBox>
 
         <DataGrid 
             AutoGenerateColumns="False"
-            Grid.Row="8"
+            Grid.Row="9"
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Owners}"
             SelectedItem="{Binding SelectedOwner}" Margin="0,0,0,0"
@@ -84,8 +87,9 @@
                 <DataGridTextColumn Width="80" Header="Keresztnév" Binding="{Binding FirstName}"></DataGridTextColumn>
                 <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
-                <DataGridTextColumn Width="170" Header="Edzőterem neve" Binding="{Binding Tulajdon}"></DataGridTextColumn>
-                <DataGridTextColumn Width="100" Header="Település" Binding="{Binding Telepules}"></DataGridTextColumn>
+                <DataGridTextColumn Width="220" Header="Lakcím" Binding="{Binding Address}"></DataGridTextColumn>
+                <DataGridTextColumn Width="170" Header="Edzőterem neve" Binding="{Binding Ownership}"></DataGridTextColumn>
+                <DataGridTextColumn Width="100" Header="Település" Binding="{Binding Settlement}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

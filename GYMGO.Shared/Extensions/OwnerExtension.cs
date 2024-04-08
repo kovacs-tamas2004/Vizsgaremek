@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GYMGO.Shared.Models;
+﻿using GYMGO.Shared.Models;
 using GYMGO.Shared.Dtos;
 
 namespace GYMGO.Shared.Extensions
@@ -19,8 +14,9 @@ namespace GYMGO.Shared.Extensions
                 LastName = owner.LastName,
                 BirthsDay = owner.BirthsDay,
                 Email = owner.Email,
-                Tulajdon = owner.Tulajdon,
-                Telepules = owner.Telepules,
+                Address = owner.Address,
+                Ownership = owner.Ownership,
+                Settlement = owner.Settlement,
             };
         }
 
@@ -33,8 +29,9 @@ namespace GYMGO.Shared.Extensions
                 LastName = ownerdto.LastName,
                 BirthsDay = ownerdto.BirthsDay,
                 Email = ownerdto.Email,
-                Tulajdon=ownerdto.Tulajdon,
-                Telepules=ownerdto.Telepules,
+                Address = ownerdto.Address,
+                Ownership = ownerdto.Ownership,
+                Settlement = ownerdto.Settlement,
             };
         }
     }

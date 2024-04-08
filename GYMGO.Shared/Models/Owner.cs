@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GYMGO.Shared.Models
+﻿namespace GYMGO.Shared.Models
 {
     public class Owner : IDbEntity<Owner>
     {
@@ -13,8 +7,9 @@ namespace GYMGO.Shared.Models
         public string LastName { get; set; }
         public DateTime BirthsDay { get; set; }
         public string Email { get; set; }
-        public string Tulajdon { get; set; }
-        public string Telepules { get; set; }
+        public string Address { get; set; }
+        public string Ownership { get; set; }
+        public string Settlement { get; set; }
         public bool HasId => Id != Guid.Empty;
         public string HungarianFullName
         {
@@ -22,15 +17,16 @@ namespace GYMGO.Shared.Models
             get => $"{LastName} {FirstName}";
         }
 
-        public Owner(Guid id, string firstName, string lastName, DateTime birthsDay, string email, string tulajdon, string telepules)
+        public Owner(Guid id, string firstName, string lastName, DateTime birthsDay, string email, string address, string ownership, string settlement)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             BirthsDay = birthsDay;
             Email = email;
-            Tulajdon = tulajdon;
-            Telepules = telepules;
+            Address = address;
+            Ownership = ownership;
+            Settlement = settlement;
         }
 
         public Owner()
@@ -40,13 +36,14 @@ namespace GYMGO.Shared.Models
             LastName = string.Empty;
             BirthsDay = new DateTime();
             Email = string.Empty;
-            Tulajdon = string.Empty;
-            Telepules = string.Empty;
+            Address = string.Empty;
+            Ownership = string.Empty;
+            Settlement = string.Empty;
         }
 
         public override string ToString()
         {
-            return $"{LastName} {FirstName} {String.Format("{0:yyyy.MM.dd.}", BirthsDay)}) {Email} {Tulajdon} {Telepules}";
+            return $"{LastName} {FirstName} {String.Format("{0:yyyy.MM.dd.}", BirthsDay)}) {Email} {Address} {Ownership} {Settlement}";
         }
     }
 }
