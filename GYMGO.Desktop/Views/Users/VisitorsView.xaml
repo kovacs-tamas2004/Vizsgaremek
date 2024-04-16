@@ -71,7 +71,7 @@
         <TextBox Grid.Row="4" Grid.Column="1" Margin="2 2 2 2" Padding="0 2" Text="{Binding SelectedVisitor.Address}"></TextBox>
         <DatePicker Grid.Row="5" Grid.Column="1" Margin="2 2 2 2" SelectedDate="{Binding SelectedVisitor.BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DatePicker>
         <ComboBox Grid.Row="6" Grid.Column="1" Margin="2 2 2 2"
-            ItemsSource="{Binding WorkingForms}"
+            ItemsSource="{Binding WorkingForms, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
             SelectedItem="{Binding SelectedWorkingForm}"
             SelectedIndex="0">
         </ComboBox>
@@ -89,7 +89,7 @@
                 <DataGridTextColumn Width="100" Header="Születési dátum" Binding="{Binding BirthsDay, StringFormat=\{0:yyyy-MM-dd\}}"></DataGridTextColumn>
                 <DataGridTextColumn Width="170" Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
                 <DataGridTextColumn Width="220" Header="Lakcím" Binding="{Binding Address}"></DataGridTextColumn>
-                <DataGridTextColumn Width="170" Header="Edzésfajta" Binding="{Binding WorkingLevels}"></DataGridTextColumn>
+                <DataGridTextColumn Width="170" Header="Edzésfajta" Binding="{Binding WorkingForm}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -19,6 +19,7 @@ namespace GYMGO.Backend.Context
                     Address="Budapest, Kossuth Lajos utca 12.",
                     Young=true,
                     Old=true,
+                    WorkingLevels="Izomnövelés",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -33,6 +34,7 @@ namespace GYMGO.Backend.Context
                     Young=true,
                     Middle=true,
                     Old=true,
+                    WorkingLevels="HIT edzés",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -45,6 +47,7 @@ namespace GYMGO.Backend.Context
                     Email="lakbela@gmail.com",
                     Address="Debrecen, Bem tér 3.",
                     Middle=true,
+                    WorkingLevels="Izomnövelés",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -58,6 +61,7 @@ namespace GYMGO.Backend.Context
                     Address="Pécs, Jókai utca 24.",
                     Middle=true,
                     Old=true,
+                    WorkingLevels="Fogyás",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 },
@@ -71,6 +75,7 @@ namespace GYMGO.Backend.Context
                     Address="Győr, Arany János utca 18.",
                     Young=true,
                     Middle=true,
+                    WorkingLevels="HIT edzés",
                     AgeGroupId=Guid.NewGuid(),
                     WorkingTypeId=Guid.NewGuid(),
                 }
@@ -88,6 +93,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(1994,03,24),
                     Email="abraham1994@gmail.com",
                     Address="Miskolc, Bartók Béla út 30.",
+                    WorkingForm="Izomépítés",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -98,6 +104,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(2000,11,30),
                     Email="lakkev1130@gmail.com",
                     Address="Kecskemét, Ady Endre utca 7.",
+                    WorkingForm="Plusz tömeg felvétele",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -108,6 +115,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(1996,09,03),
                     Email="eszterkiss@gmail.com",
                     Address="Szombathely, Kossuth tér 15.",
+                    WorkingForm="Versenyre való felkészülés",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -118,6 +126,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(1982,07,28),
                     Email="kovacs.greta0728@gmail.com",
                     Address="Nyíregyháza, Széchenyi utca 52.",
+                    WorkingForm="Izomépítés",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -128,6 +137,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(2000,01,11),
                     Email="nagyakos0111@gmail.com",
                     Address="Veszprém, Pázmány Péter utca 9.",
+                    WorkingForm="Testzsír leadása",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -138,6 +148,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(1999,02,24),
                     Email="horkamilla0224@gmail.com",
                     Address="Székesfehérvár, Táncsics Mihály utca 36.",
+                    WorkingForm="Izom szinten tartása",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -148,6 +159,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(2003,10,08),
                     Email="ferenc.hajnal@gmail.com",
                     Address="Eger, Deák Ferenc tér 21.",
+                    WorkingForm="Izomépítés",
                     WorkingFormId=Guid.NewGuid(),
                 },
                 new Visitor
@@ -158,6 +170,7 @@ namespace GYMGO.Backend.Context
                     BirthsDay=new DateTime(1997,09,16),
                     Email="pappeniko0916@gmail.com",
                     Address="Zalaegerszeg, Szent István tér 4.",
+                    WorkingForm="Versenyre való felkészülés",
                     WorkingFormId=Guid.NewGuid(),
                 }
             };
