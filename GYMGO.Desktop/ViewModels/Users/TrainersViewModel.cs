@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using GYMGO.Shared.Models;
 using GYMGO.Shared.Responses;
 using GYMGO.desktop.ViewModels.Base;
+using MySql.Data.MySqlClient;
 
 namespace GYMGO.Desktop.ViewModels.Users
 {
@@ -62,16 +63,49 @@ namespace GYMGO.Desktop.ViewModels.Users
         {
             if (_trainerService is not null && newTrainer is not null)
             {
-                ControllerResponse result = new();
-                if (newTrainer.HasId)
-                    result = await _trainerService.UpdateAsync(newTrainer);
-                else
-                    result = await _trainerService.InsertAsync(newTrainer);
-                if (!result.HasError)
+                try
                 {
-                    await UpdateView();
+                    using (var connection = new MySqlConnection("Server=localhost;Database=desktop;Uid=desktop_user;Pwd=password;"))
+                    {
+                        await connection.OpenAsync();
+
+                        MySqlCommand command;
+                        if (newTrainer.HasId)
+                        {
+                            command = new MySqlCommand(
+                                "UPDATE Trainers SET LastName = @LastName, FirstName = @FirstName, " +
+                                "BirthsDay = @BirthsDay, Email = @Email, Address = @Address, WorkingLevels = @WorkingLevels, " +
+                                "Young = @Young, Middle = @Middle, Old = @Old " +
+                                "WHERE Id = @Id", connection);
+                            command.Parameters.AddWithValue("@Id", newTrainer.Id);
+                        }
+                        else
+                        {
+                            command = new MySqlCommand(
+                                "INSERT INTO Trainers (LastName, FirstName, BirthsDay, Email, Address, Young, Middle, Old, WorkingLevels) " +
+                                "VALUES (@LastName, @FirstName, @BirthsDay, @Email, @Address, @Young, @Middle, @Old, @WorkingLevels)", connection);
+                        }
+
+                        command.Parameters.AddWithValue("@LastName", newTrainer.LastName);
+                        command.Parameters.AddWithValue("@FirstName", newTrainer.FirstName);
+                        command.Parameters.AddWithValue("@BirthsDay", newTrainer.BirthsDay);
+                        command.Parameters.AddWithValue("@Email", newTrainer.Email);
+                        command.Parameters.AddWithValue("@Address", newTrainer.Address);
+                        command.Parameters.AddWithValue("@Young", newTrainer.Young);
+                        command.Parameters.AddWithValue("@Middle", newTrainer.Middle);
+                        command.Parameters.AddWithValue("@Old", newTrainer.Old);
+                        command.Parameters.AddWithValue("@WorkingLevels", newTrainer.WorkingLevels);
+
+                        await command.ExecuteNonQueryAsync();
+
+                        await UpdateView();
+                    }
                 }
-            }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Hiba történt az adatok mentése közben: {ex.Message}");
+                }
+            }    
         }
 
         [RelayCommand]

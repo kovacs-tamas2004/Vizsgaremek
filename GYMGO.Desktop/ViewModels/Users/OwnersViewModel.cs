@@ -5,6 +5,7 @@ using GYMGO.Desktop.Views.Users;
 using GYMGO.HttpService.Service;
 using GYMGO.Shared.Models;
 using GYMGO.Shared.Responses;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -45,14 +46,44 @@ namespace GYMGO.Desktop.ViewModels.Users
         {
             if (_ownerService is not null && newOwner is not null)
             {
-                ControllerResponse result = new();
-                if (newOwner.HasId)
-                    result = await _ownerService.UpdateAsync(newOwner);
-                else
-                    result = await _ownerService.InsertAsync(newOwner);
-                if (!result.HasError)
+                try
                 {
-                    await UpdateView();
+                    using (var connection = new MySqlConnection("Server=localhost;Database=desktop;Uid=desktop_user;Pwd=password;"))
+                    {
+                        await connection.OpenAsync();
+
+                        MySqlCommand command;
+                        if (newOwner.HasId)
+                        {
+                            command = new MySqlCommand(
+                                "UPDATE Owners SET LastName = @LastName, FirstName = @FirstName, " +
+                                "BirthsDay = @BirthsDay, Email = @Email, Address = @Address, Ownership = @Ownership, Settlement = @Settlement " +
+                                "WHERE Id = @Id", connection);
+                            command.Parameters.AddWithValue("@Id", newOwner.Id);
+                        }
+                        else
+                        {
+                            command = new MySqlCommand(
+                                "INSERT INTO Owners (LastName, FirstName, BirthsDay, Email, Address, Ownership, Settlement) " +
+                                "VALUES (@LastName, @FirstName, @BirthsDay, @Email, @Address, @Ownership, @Settlement)", connection);
+                        }
+
+                        command.Parameters.AddWithValue("@LastName", newOwner.LastName);
+                        command.Parameters.AddWithValue("@FirstName", newOwner.FirstName);
+                        command.Parameters.AddWithValue("@BirthsDay", newOwner.BirthsDay);
+                        command.Parameters.AddWithValue("@Email", newOwner.Email);
+                        command.Parameters.AddWithValue("@Address", newOwner.Address);
+                        command.Parameters.AddWithValue("@Ownership", newOwner.Ownership);
+                        command.Parameters.AddWithValue("@Settlement", newOwner.Settlement);
+
+                        await command.ExecuteNonQueryAsync();
+
+                        await UpdateView();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Hiba történt az adatok mentése közben: {ex.Message}");
                 }
             }
         }

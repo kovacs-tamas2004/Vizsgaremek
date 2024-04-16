@@ -8,9 +8,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using GYMGO.Shared.Models;
-using GYMGO.Shared.Extensions;
 using GYMGO.Shared.Responses;
-using GYMGO.Desktop.Views.Users;
+using MySql.Data.MySqlClient;
 
 namespace GYMGO.Desktop.ViewModels.Users
 {
@@ -64,14 +63,43 @@ namespace GYMGO.Desktop.ViewModels.Users
         {
             if (_visitorService is not null && newVisitor is not null)
             {
-                ControllerResponse result = new();
-                if (newVisitor.HasId)
-                    result = await _visitorService.UpdateAsync(newVisitor);
-                else
-                    result = await _visitorService.InsertAsync(newVisitor);
-                if (!result.HasError)
+                try
                 {
-                    await UpdateView();
+                    using (var connection = new MySqlConnection("Server=localhost;Database=desktop;Uid=desktop_user;Pwd=password;"))
+                    {
+                        await connection.OpenAsync();
+
+                        MySqlCommand command;
+                        if (newVisitor.HasId)
+                        {
+                            command = new MySqlCommand(
+                                "UPDATE Visitors SET LastName = @LastName, FirstName = @FirstName, " +
+                                "BirthsDay = @BirthsDay, Email = @Email, Address = @Address, WorkingForm = @WorkingForm " +
+                                "WHERE Id = @Id", connection);
+                            command.Parameters.AddWithValue("@Id", newVisitor.Id);
+                        }
+                        else
+                        {
+                            command = new MySqlCommand(
+                                "INSERT INTO Visitors (LastName, FirstName, BirthsDay, Email, Address, WorkingForm) " +
+                                "VALUES (@LastName, @FirstName, @BirthsDay, @Email, @Address, @WorkingForm)", connection);
+                        }
+
+                        command.Parameters.AddWithValue("@LastName", newVisitor.LastName);
+                        command.Parameters.AddWithValue("@FirstName", newVisitor.FirstName);
+                        command.Parameters.AddWithValue("@BirthsDay", newVisitor.BirthsDay);
+                        command.Parameters.AddWithValue("@Email", newVisitor.Email);
+                        command.Parameters.AddWithValue("@Address", newVisitor.Address);
+                        command.Parameters.AddWithValue("@WorkingForm", newVisitor.WorkingForm);
+
+                        await command.ExecuteNonQueryAsync();
+
+                        await UpdateView();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Hiba történt az adatok mentése közben: {ex.Message}");
                 }
             }
         }
