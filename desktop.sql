@@ -38,13 +38,6 @@ CREATE TABLE `owners` (
   `Settlement` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- A tábla adatainak kiíratása `owners`
---
-
-INSERT INTO `owners` (`Id`, `LastName`, `FirstName`, `BirthsDay`, `Email`, `Address`, `Ownership`, `Settlement`) VALUES
-(1, 'asd', 'asd', '0001-01-01', 'asd', 'asd', 'asd', 'das');
-
 -- --------------------------------------------------------
 
 --
@@ -64,14 +57,6 @@ CREATE TABLE `trainers` (
   `Old` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- A tábla adatainak kiíratása `trainers`
---
-
-INSERT INTO `trainers` (`Id`, `LastName`, `FirstName`, `BirthsDay`, `Email`, `Address`, `WorkingLevels`, `Young`, `Middle`, `Old`) VALUES
-(1, 'asd', 'asd', '0001-01-01', 'asd', 'asd', 'HIT edzés', 0, 1, 1),
-(2, 'asd', 'asd', '0001-01-01', 'asd', 'das', 'HIT edzés', 1, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -87,18 +72,6 @@ CREATE TABLE `visitors` (
   `Address` varchar(255) NOT NULL,
   `WorkingForm` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- A tábla adatainak kiíratása `visitors`
---
-
-INSERT INTO `visitors` (`Id`, `LastName`, `FirstName`, `BirthsDay`, `Email`, `Address`, `WorkingForm`) VALUES
-(5, 'Kovács', 'Tamás', '2004-02-18', 'kovacs.tamas0218@gmail.com', 'Szeged, Nagyszombati utca 24/A', 'Izomépítés'),
-(6, 'asd', 'asd', '0001-01-01', 'ads', 'ads', 'Plusz tömeg felvétele');
-
---
--- Indexek a kiírt táblákhoz
---
 
 --
 -- A tábla indexei `owners`
